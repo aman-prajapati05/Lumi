@@ -1,8 +1,21 @@
+/* /* @import url("https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:wght@700&display=swap'); */
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* image-input.css */
+body{
+  background-color: rgb(27, 25, 25);
+}
+
+#logo{
+  font-family: 'Rubik Broken Fax', cursive;
+  font-size: 50px;
+}
 
 .image-input {
   display: flex;
