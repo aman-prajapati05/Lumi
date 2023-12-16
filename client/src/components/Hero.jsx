@@ -3,7 +3,9 @@ import React from 'react'
 const Hero = () => {
   return (
     <>
-    <div>main</div>
+    <div>
+      <h1>Lumi</h1>
+    </div>
     </>
   )
 }

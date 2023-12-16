@@ -1,17 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Hero from './components/Hero.jsx';
+import { useState } from "react";
+import ImageInput from "./components/Image-input";
+import "./index.css";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <Hero/>
-    </>
-  )
+    <div className="App">
+      <Navbar />
+      <Hero />
+      <ImageInput />
+    </div>
+  );
 }
 
-export default App
+export default App;
+
