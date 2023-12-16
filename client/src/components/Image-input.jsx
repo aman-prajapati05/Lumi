@@ -34,11 +34,11 @@ const ImageDropInput = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center bg-gray-800 p-10">
+    <div className="flex flex-col justify-center items-center bg-zinc-800 w-1/2 h-1/2 p-5 ml-14">
       <div className="border-2 border-dashed border-gray-600 rounded-lg">
         <div className="flex flex-col items-center justify-center">
           <div
-            className="flex flex-col items-center w-30 h-40 p-4 cursor-pointer relative"
+            className="flex flex-col items-center w-full h-64 p-4 cursor-pointer relative"
             onClick={handleUploadClick}
             onDrop={handleDrop}
             onDragOver={handleDragOver}
@@ -54,12 +54,14 @@ const ImageDropInput = () => {
                   className="absolute top-0 right-0 m-2 text-white text-2xl leading-none hover:text-red-600 focus:outline-none"
                   onClick={handleRemoveClick}
                 >
-                  ×
+                  X
                 </button>
               </>
             ) : (
-              <p className="text-gray-400">
+              <p className="text-gray-400 mt-12">
                 Drag an image here or click to upload
+
+
               </p>
             )}
             <input

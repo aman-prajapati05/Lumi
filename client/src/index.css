@@ -8,7 +8,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* image-input.css */
+body{
+  background-color: rgb(27, 25, 25);
+}
+
+#logo{
+  font-family: 'Rubik Broken Fax', cursive;
+  font-size: 50px;
+}
 
 .image-input {
   display: flex;
