@@ -1,8 +1,7 @@
 import requests
-from transformers import pipeline
 from dotenv import load_dotenv,find_dotenv
 import replicate
-import openai
+
 API_TOKEN1="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"
 API_URL1 = "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-large"
 REPLICATE_API_TOKEN="r8_68NJGidSrOXK5Ri2lkUchvGSL5JaN5q2hzJBY"
