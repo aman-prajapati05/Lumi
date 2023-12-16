@@ -3,12 +3,14 @@ import ImageInput from "./components/Image-input";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
+      <ParticlesBackground />
       <Navbar />
       <Hero />
       <ImageInput />
@@ -17,4 +19,3 @@ function App() {
 }
 
 export default App;
-
