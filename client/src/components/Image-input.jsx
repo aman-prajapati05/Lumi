@@ -34,8 +34,8 @@ const ImageDropInput = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center bg-zinc-800 w-1/2 h-1/2 p-5 ml-14">
-      <div className="border-2 border-dashed border-gray-600 rounded-lg">
+    <div className="flex flex-col justify-center items-center p-5 mt-48 ">
+      <div className="border-2 border-dashed border-white rounded-3xl w-4/12">
         <div className="flex flex-col items-center justify-center">
           <div
             className="flex flex-col items-center w-full h-64 p-4 cursor-pointer relative"
@@ -60,8 +60,6 @@ const ImageDropInput = () => {
             ) : (
               <p className="text-gray-400 mt-12">
                 Drag an image here or click to upload
-
-
               </p>
             )}
             <input
@@ -79,7 +77,7 @@ const ImageDropInput = () => {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="Enter your prompt here"
-            className="p-2 bg-transparent border text-white border-gray-600 rounded-lg "
+            className="p-3 bg-transparent border text-white border-gray-600 rounded-lg "
           />
           <button
             className="w-full text-white p-2 rounded-full flex items-center justify-center focus:outline-none"
