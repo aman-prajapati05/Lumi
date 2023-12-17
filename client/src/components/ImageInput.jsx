@@ -34,7 +34,7 @@ const ImageDropInput = () => {
     e.stopPropagation();
     setImage(null);
   };
-  const url = "http://192.168.35.26:4000/api/image/";
+  const url = "https://aman-prajapati.onrender.com/api/image/";
   const handleSubmit = async () => {
     setLd(true);
 
