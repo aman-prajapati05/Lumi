@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react";
+
 //10.1.30.183 /api/image
 const ImageDropInput = () => {
   const [image, setImage] = useState(null);
+  const [result, setResult] = useState("");
   const [ld, setLd] = useState(false);
   const [prompt, setPrompt] = useState("");
   const fileInputRef = useRef(null);
@@ -13,7 +15,6 @@ const ImageDropInput = () => {
       setImage(file);
     }
   };
-
   const handleDragOver = (e) => {
     e.preventDefault();
   };
@@ -38,16 +39,32 @@ const ImageDropInput = () => {
     setLd(true);
 
     console.log("uploading");
-    const result = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ image: image, prompt: prompt }),
-    });
-    const response = await result.json();
-    console.log(response);
-    if (response.result) {
+    const data = image;
+    const response = await fetch(
+      "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-large",
+      {
+        headers: {
+          Authorization: "Bearer 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",
+        },
+        method: "POST",
+        body: data,
+      }
+    );
+    const result = await response.json();
+    console.log(result);
+    if (result[0].generated_text) {
+      const output = await fetch("http://localhost:3000/api/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: `generate this story: ${prompt} ${result[0].generated_text}`,
+        }),
+      });
+      const finalOutput = await output.json();
+      console.log(finalOutput);
+      setResult(finalOutput.result);
       setLd(false);
     } else {
       alert("Error");
@@ -68,7 +85,7 @@ const ImageDropInput = () => {
                 <img
                   src={URL.createObjectURL(image)}
                   alt="Uploaded"
-                  className="w-20 h-20 object-cover rounded-lg"
+                  className="w-3/4 aspect-auto object-cover rounded-2xl "
                 />
                 <button
                   className="absolute top-0 right-0 m-2 text-white text-2xl leading-none hover:text-red-600 focus:outline-none"
@@ -113,10 +130,24 @@ const ImageDropInput = () => {
           </button>
         </div>
       </div>
+      <div className="flex flex-wrap justify-center">
+        {result === "" ? null : (
+          <p
+            className="w-4/5 text-2xl text-center p-5 text-white mt-12 capitalize border-2 rounded-[10vh] border-lime-500 cursor-default"
+            id="output">
+            {result}
+          </p>
+        )}
+      </div>
     </div>
   ) : (
-    <div className=" min-h-[40vh] w-full flex justify-center items-center text-3xl text-slate-100">
-      Loading
+    <div className=" min-h-[40vh] w-full flex justify-center items-center text-3xl text-slate-100 cursor-default">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };

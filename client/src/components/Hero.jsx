@@ -5,7 +5,7 @@ const Hero = () => {
     <>
       <div className="flex flex-col mt-36">
         <h1
-          className="text-[250px] text-lime-500 cursor-default flex flex-col items-center w-full tracking-wider leading-none"
+          className="text-[30vh] text-lime-500 cursor-default flex flex-col items-center w-full tracking-wider leading-none sm:scale-1"
           id="hero">
           Lumi
         </h1>
