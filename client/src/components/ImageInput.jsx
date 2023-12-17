@@ -53,7 +53,7 @@ const ImageDropInput = () => {
     const result = await response.json();
     console.log(result);
     if (result[0].generated_text) {
-      const output = await fetch("http://localhost:3000/api/", {
+      const output = await fetch("https://aman-prajapati.onrender.com/api/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
