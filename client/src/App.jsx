@@ -5,15 +5,27 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ParticlesBackground from "./components/ParticlesBackground";
 
+
 function App() {
-  const [count, setCount] = useState(0);
+  
 
   return (
     <div className="App">
       <ParticlesBackground />
       <Navbar />
       <Hero />
-      <ImageInput />
+      {/* <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br /> */}
+      <ImageInput id='element'/>
+      {/* <br />
+      <br />
+      <br />
+      <br />
+      <br /> */}
     </div>
   );
 }

@@ -85,7 +85,7 @@ const ImageDropInput = () => {
                 <img
                   src={URL.createObjectURL(image)}
                   alt="Uploaded"
-                  className="w-3/4 aspect-auto object-cover rounded-2xl "
+                  className=" flex -mt-14 w-3/4 scale-50 aspect-square object-cover rounded-2xl "
                 />
                 <button
                   className="absolute top-0 right-0 m-2 text-white text-2xl leading-none hover:text-red-600 focus:outline-none"
@@ -112,7 +112,7 @@ const ImageDropInput = () => {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="Enter your prompt here"
-            className="bg-transparent border text-white border-spacing-5 w-3/4 p-6 mb-6 border-white rounded-lg"></textarea>
+            className="bg-transparent border text-white border-spacing-5 w-1/2 p-6 mb-6 border-white rounded-lg"></textarea>
           <button
             className="ml-5 text-white p-2 rounded-full border-2 border-lime-400 flex items-center justify-center focus:outline-none"
             onClick={() => handleSubmit()}>
