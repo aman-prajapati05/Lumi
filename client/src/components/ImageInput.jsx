@@ -142,7 +142,7 @@ const ImageDropInput = () => {
     </div>
   ) : (
     <div className=" min-h-[40vh] w-full flex justify-center items-center text-3xl text-slate-100 cursor-default">
-      <div class="lds-ellipsis">
+      <div className="lds-ellipsis">
         <div></div>
         <div></div>
         <div></div>

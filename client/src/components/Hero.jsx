@@ -13,7 +13,7 @@ const Hero = () => {
           Illuminate Moments.
         </p>
         <div className="flex justify-center pt-4">
-          <button className="text-white p-3 border-2  w-36 h-12 rounded-2xl flex justify-center hover:border-lime-500 font-bold">
+          <button className="text-white p-3 border-2  bg-lime-500 w-36 h-12 rounded-2xl flex justify-center hover:bg-transparent hover:border-white font-bold">
             Get Started
           </button>
         </div>
