@@ -9,12 +9,17 @@
 @tailwind utilities;
 
 body{
-  background-color: rgb(27, 25, 25);
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
 }
 
 #logo{
   font-family: 'Rubik Broken Fax', cursive;
   font-size: 50px;
+}
+
+#hero{
+  font-family: 'Rubik Broken Fax', cursive;
 }
 
 .image-input {
@@ -106,3 +111,37 @@ body{
 .cancel-button:focus {
   outline: none;
 }
+#hero {
+  position: relative;
+}
+#hero::after{
+  content: '';
+  position: absolute;
+  /* top: 50%;
+  transform: translateY(-50%); */
+  top: -50%;
+  right: 10%;
+  width: 150px;
+  aspect-ratio: 1/1;
+  border-radius: 461px;
+  border: 1px solid #000;
+  background: #7a0ead99;
+  filter: blur(50px);
+  outline: solid white;
+  animation: colorChangingAnimation 5s linear infinite;
+  opacity: 0.3;
+}
+
+
+@keyframes colorChangingAnimation {
+  0%,100% {
+    background: #7a0ead99;
+  }
+  25%,75% {
+    background: #00ff00;
+  }
+  50% {
+    background: #cc00ff;
+  }
+}
+
