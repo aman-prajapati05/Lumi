@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ImageInput from "./components/Image-input";
+import ImageInput from "./components/ImageInput";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";

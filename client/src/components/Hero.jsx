@@ -12,8 +12,8 @@ const Hero = () => {
         <p className="text-white text-6xl text-center leading-snug font-">
           Illuminate Moments.
         </p>
-        <div className='flex justify-center pt-4'>
-          <button className="text-white p-3 border-2 border-lime-500 w-36 h-12 rounded-2xl flex justify-center hover:text-lime-500 hover:border-white font-bold">
+        <div className="flex justify-center pt-4">
+          <button className="text-white p-3 border-2  w-36 h-12 rounded-2xl flex justify-center hover:border-lime-500 font-bold">
             Get Started
           </button>
         </div>

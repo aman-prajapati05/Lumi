@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
-
+//10.1.30.183 /api/image
 const ImageDropInput = () => {
   const [image, setImage] = useState(null);
+  const [ld, setLd] = useState(false);
   const [prompt, setPrompt] = useState("");
   const fileInputRef = useRef(null);
 
@@ -32,8 +33,28 @@ const ImageDropInput = () => {
     e.stopPropagation();
     setImage(null);
   };
+  const url = "http://192.168.35.26:4000/api/image/";
+  const handleSubmit = async () => {
+    setLd(true);
 
-  return (
+    console.log("uploading");
+    const result = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ image: image, prompt: prompt }),
+    });
+    const response = await result.json();
+    console.log(response);
+    if (response.result) {
+      setLd(false);
+    } else {
+      alert("Error");
+    }
+  };
+
+  return !ld ? (
     <div className="flex flex-col justify-center items-center p-5 mt-48 ">
       <div className="border-4 border-dashed border-lime-500 rounded-3xl w-4/12">
         <div className="flex flex-col items-center justify-center">
@@ -77,7 +98,7 @@ const ImageDropInput = () => {
             className="bg-transparent border text-white border-spacing-5 w-3/4 p-6 mb-6 border-white rounded-lg"></textarea>
           <button
             className="ml-5 text-white p-2 rounded-full border-2 border-lime-400 flex items-center justify-center focus:outline-none"
-            onClick={() => console.log("Photo Uploaded")}>
+            onClick={() => handleSubmit()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -92,6 +113,10 @@ const ImageDropInput = () => {
           </button>
         </div>
       </div>
+    </div>
+  ) : (
+    <div className=" min-h-[40vh] w-full flex justify-center items-center text-3xl text-slate-100">
+      Loading
     </div>
   );
 };
