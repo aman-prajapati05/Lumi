@@ -7,7 +7,7 @@ import api from "./routes/api.js";
 
 app.use("/api", api);
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.redirect("https://lumiai.vercel.app/");
 });
 
 app.listen(3000, () => {
