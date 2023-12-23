@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
       {
         input: {
           prompt: text,
+
         },
       }
     );

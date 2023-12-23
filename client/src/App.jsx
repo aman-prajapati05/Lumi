@@ -15,7 +15,7 @@ function App() {
       <Navbar />
       <Hero />
       
-      <ImageInput id='element'/>
+      
       
     </div>
   );

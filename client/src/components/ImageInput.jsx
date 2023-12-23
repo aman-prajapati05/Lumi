@@ -73,8 +73,8 @@ const ImageDropInput = () => {
 
   return !ld ? (
     <div className="flex flex-col justify-center items-center p-5 mt-48 ">
-      <div className="border-4 border-dashed border-lime-500 rounded-3xl w-4/12">
-        <div className="flex flex-col items-center justify-center">
+      <div className="border-4 border-dashed border-lime-500 rounded-3xl w-full md:w-1/3 h-96">
+        <div className="flex flex-col items-center justify-center   ">
           <div
             className="flex flex-col items-center w-full h-64 p-4 cursor-pointer relative"
             onClick={handleUploadClick}
@@ -130,10 +130,10 @@ const ImageDropInput = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex md:flex-wrap md:justify-center">
         {result === "" ? null : (
           <p
-            className="w-4/5 text-2xl text-center p-5 text-white mt-12 capitalize border-2 rounded-[10vh] border-lime-500 cursor-default"
+            className="md:w-4/5 w-full md:text-2xl text-xl text-center pt-5 text-white mt-12 capitalize border-2 rounded-[10vh] border-lime-500 cursor-default"
             id="output">
             {result}
           </p>
