@@ -14,18 +14,9 @@ function App() {
       <ParticlesBackground />
       <Navbar />
       <Hero />
-      {/* <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br /> */}
+      
       <ImageInput id='element'/>
-      {/* <br />
-      <br />
-      <br />
-      <br />
-      <br /> */}
+      
     </div>
   );
 }
