@@ -7,7 +7,7 @@ router.post("/", async (req, res) => {
   try {
     const { text } = req.body;
     const replicate = new Replicate({
-      auth: "r8_Mw9K5ZyQncpJCpvSeEOzuwQ7uzpXmys2u5spn",
+      auth: "r8_MvM3vqvRfdo0mGOuRDN69Tq007m4TGq2RkGkf",
     });
 
     const output = await replicate.run(
